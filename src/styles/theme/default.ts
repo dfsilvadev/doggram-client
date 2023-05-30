@@ -8,10 +8,6 @@ const theme = {
       xxlg: "82.5rem"
     }
   },
-  border: {
-    radius: "0.25rem",
-    outlineOffiset: "0.125rem"
-  },
 
   font: {
     family:
@@ -31,33 +27,15 @@ const theme = {
     }
   },
 
-  spacings: {
-    xxsmall: "0.5rem", //8px
-    xsmall: "1rem", // 16px
-    small: "1.5rem", // 24px
-    medium: "2rem", // 32px
-    large: "2.5rem" // 40px
-  },
-  transition: {
-    default: "0.3s ease-in-out",
-    fast: "0.15s ease-in-out"
-  },
-
   colors: {
     white: "#FFFFFF",
 
     gray50: "#f7f8fa",
-    gray100: "#e6e8eb",
-    gray150: "#ced4da",
-    gray200: "#afb2b1",
-    gray500: "#808080",
     gray800: "#494d4b",
 
-    green500: "#00B37E",
+    green500: "#00DC90",
 
     red500: "#F16165",
-
-    yellow500: "#ffbb11",
 
     purple300: "#9f75ff",
     purple400: "#9164fa",
