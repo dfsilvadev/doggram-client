@@ -17,7 +17,6 @@ const theme = {
     family:
       "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Poppins, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     weight: {
-      light: 300,
       regular: 400,
       medium: 500,
       bold: 700
@@ -45,16 +44,25 @@ const theme = {
   },
 
   colors: {
-    background: "#121214",
-    elements: "#202024",
-    divider: "#323238",
-    placeholder: "#7C7C8A",
-    label: "#8D8D99",
-    text: "#C4C4CC",
-    title: "#E1E1E6",
     white: "#FFFFFF",
-    red: "#F16165",
-    green: "#00B37E"
+
+    gray50: "#f7f8fa",
+    gray100: "#e6e8eb",
+    gray150: "#ced4da",
+    gray200: "#afb2b1",
+    gray500: "#808080",
+    gray800: "#494d4b",
+
+    green500: "#00B37E",
+
+    red500: "#F16165",
+
+    yellow500: "#ffbb11",
+
+    purple300: "#9f75ff",
+    purple400: "#9164fa",
+    purple500: "#8257e5",
+    purple800: "#6f48c9"
   }
 } as const;
 
