@@ -9,7 +9,7 @@ export const parameters = {
       order: [
         "Introdução",
         "Pages",
-        ["Transactions"],
+        ["SIGNIN", "SIGNUP", "HOME", "PROFILE", "PROFILE EDIT"],
         "Layout",
         "Components",
         "Form",
@@ -30,12 +30,12 @@ export const parameters = {
     default: "primary",
     values: [
       {
-        name: "primary",
-        value: "#121214"
+        name: "light",
+        value: "#f7f8fa"
       },
       {
-        name: "light",
-        value: "#E1E1E6"
+        name: "dark",
+        value: "#121214"
       }
     ]
   },
