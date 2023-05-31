@@ -39,7 +39,7 @@ const Input = ({
           {...props}
         />
       </S.InputWrapper>
-      {!!error && <S.Error>{error}</S.Error>}
+      {!!error && <S.ErrorMsg>{error}</S.ErrorMsg>}
     </S.Wrapper>
   );
 };

@@ -95,7 +95,7 @@ export const Icon = styled.div<IconPositionProps>`
   `}
 `;
 
-export const Error = styled.p`
+export const ErrorMsg = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.red500};
     font-size: ${theme.font.sizes.xsmall};
