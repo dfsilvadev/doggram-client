@@ -47,18 +47,14 @@ describe("Input", () => {
     expect(onInput).toHaveBeenCalledWith(text);
   });
 
-  it("should is accessible by tab", () => {
+  it("should is accessible by tab", async () => {
     renderWithTheme(<Input label="Label" name="Label" />);
-
-    const input = screen.getByLabelText("Label");
 
     expect(document.body).toHaveFocus();
 
-    act(() => {
-      userEvent.tab();
-    });
+    userEvent.tab();
 
-    expect(input).toHaveFocus();
+    expect(await screen.findByLabelText("Label")).toHaveFocus();
   });
 
   it("should render an icon", () => {
