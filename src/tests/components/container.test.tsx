@@ -25,13 +25,13 @@ describe("Container", () => {
         padding: 0 1rem;
       }
 
-      <header
+      <div
         class="c0"
       >
         <span>
           DT Money
         </span>
-      </header>
+      </div>
     `);
   });
 });
