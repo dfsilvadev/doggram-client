@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const Container = styled.header`
+const Container = styled.div`
   ${({ theme }) => css`
     width: 100%;
     max-width: ${theme.grid.container};
