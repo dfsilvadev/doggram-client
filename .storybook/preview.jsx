@@ -10,6 +10,7 @@ export const parameters = {
         "Introdução",
         "Pages",
         ["SIGNIN", "SIGNUP", "HOME", "PROFILE", "PROFILE EDIT"],
+        "Navigation",
         "Layout",
         "Components",
         "Form",
