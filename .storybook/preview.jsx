@@ -10,6 +10,7 @@ export const parameters = {
         "Introdução",
         "Pages",
         ["SIGNIN", "SIGNUP", "HOME", "PROFILE", "PROFILE EDIT"],
+        "Navigation",
         "Layout",
         "Components",
         "Form",
@@ -27,11 +28,11 @@ export const parameters = {
     }
   },
   backgrounds: {
-    default: "primary",
+    default: "light",
     values: [
       {
         name: "light",
-        value: "#f7f8fa"
+        value: "#FFD581"
       },
       {
         name: "dark",

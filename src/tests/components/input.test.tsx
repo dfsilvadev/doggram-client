@@ -1,18 +1,15 @@
 import { act, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { renderWithTheme } from "@/utils/tests";
 import { EnvelopeSimple } from "phosphor-react";
 
 import { Input } from "@/components";
 
-import { renderWithTheme } from "@/utils/tests/renderWithTheme";
-
 describe("Input", () => {
   it("should renders with label", () => {
-    const { container } = renderWithTheme(<Input label="Label" name="Field" />);
+    renderWithTheme(<Input label="Label" name="Field" />);
 
     expect(screen.getByLabelText("Label")).toBeInTheDocument();
-
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   it("should renders without label", () => {

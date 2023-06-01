@@ -40,8 +40,8 @@ export const InputWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: ${theme.colors.white};
-    border-radius: 0.2rem;
+    background: ${theme.colors.gray50};
+    border-radius: 0.5rem;
     padding: 0 0.5rem;
     border: 2px solid transparent;
     transition: 0.1s ease-in-out;
