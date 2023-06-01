@@ -28,11 +28,11 @@ export const parameters = {
     }
   },
   backgrounds: {
-    default: "primary",
+    default: "light",
     values: [
       {
         name: "light",
-        value: "#f7f8fa"
+        value: "#FFD581"
       },
       {
         name: "dark",
