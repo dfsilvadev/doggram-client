@@ -13,7 +13,10 @@ export default {
 } as ComponentMeta<typeof Container>;
 
 const Template: ComponentStory<typeof Container> = (args) => (
-  <Container {...args} style={{ border: "1px solid #fff", marginTop: "2rem" }}>
+  <Container
+    {...args}
+    style={{ background: "#FFF", marginTop: "2rem", padding: "2rem 1rem" }}
+  >
     <span>Content</span>
   </Container>
 );
