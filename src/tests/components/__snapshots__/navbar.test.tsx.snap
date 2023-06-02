@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar render currectly 1`] = `
+.c10 {
+  box-sizing: initial;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid #f7f8fa;
+  outline: 2px solid #494d4b;
+}
+
 .c1 {
   width: 100%;
   max-width: 70rem;
@@ -121,6 +131,10 @@ exports[`Navbar render currectly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 1em;
 }
 
@@ -289,6 +303,16 @@ exports[`Navbar render currectly 1`] = `
             y2="168"
           />
         </svg>
+        <img
+          aria-expanded="false"
+          aria-haspopup="menu"
+          aria-label="avatar"
+          class="c10"
+          data-state="closed"
+          id="radix-:r0:"
+          src="https://avatars.githubusercontent.com/u/16245261?v=4"
+          type="button"
+        />
       </nav>
     </div>
   </header>
