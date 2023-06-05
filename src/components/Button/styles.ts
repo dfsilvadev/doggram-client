@@ -34,7 +34,6 @@ const wrapperModifiers = {
     color: ${theme.colors.gray800};
 
     &:hover {
-      color: ${theme.colors.gray800};
       background: none;
     }
   `,

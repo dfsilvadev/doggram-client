@@ -88,16 +88,8 @@ describe("<Button />", () => {
 
     expect(screen.getByRole("button", { name: /buy now/i })).toHaveStyle({
       background: "none",
-      color: "#8257e5"
+      color: "#494d4b"
     });
-
-    expect(screen.getByRole("button", { name: /buy now/i })).toHaveStyleRule(
-      "color",
-      "#6f48c9",
-      {
-        modifier: ":hover"
-      }
-    );
   });
 
   it("should render a disabled Button", () => {

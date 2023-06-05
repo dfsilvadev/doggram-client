@@ -33,7 +33,7 @@ exports[`Navbar render currectly 1`] = `
   padding: 1rem;
   font-size: 1rem;
   background: none;
-  color: #8257e5;
+  color: #494d4b;
 }
 
 .c10:hover {
@@ -41,7 +41,6 @@ exports[`Navbar render currectly 1`] = `
 }
 
 .c10:hover {
-  color: #6f48c9;
   background: none;
 }
 
