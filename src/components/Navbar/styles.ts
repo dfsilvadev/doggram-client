@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { Container } from "@/components";
+import { Wrapper as Button } from "@/components/Button/styles";
 
 export const Header = styled.header`
   ${({ theme }) => css`
@@ -36,4 +37,12 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 1em;
+`;
+
+export const NewPostButton = styled(Button)`
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
 `;
