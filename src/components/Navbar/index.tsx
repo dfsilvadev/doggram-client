@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { MagnifyingGlass, PlusCircle } from "phosphor-react";
 
-import { Avatar, Input } from "@/components";
+import { Avatar, Button, Input } from "@/components";
 
 import { endpoint } from "@/utils/common/constant/endpoints";
 
@@ -39,7 +39,11 @@ const Navbar = () => {
             <MagnifyingGlass size={24} weight="bold" aria-label="home link" />
           </NavLink>
 
-          <PlusCircle size={24} weight="bold" />
+          <Button
+            icon={<PlusCircle size={24} weight="bold" />}
+            minimal
+            size="medium"
+          />
 
           <Avatar src="https://avatars.githubusercontent.com/u/16245261?v=4" />
         </S.Nav>

@@ -68,17 +68,14 @@ export default {
   },
   parameters: {
     layout: "centered"
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ width: 850, margin: "auto" }}>
-        <Story />
-      </div>
-    )
-  ]
+  }
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+  <div style={{ width: 850, margin: "auto" }}>
+    <Button {...args} />
+  </div>
+);
 
 export const Small = Template.bind({});
 Small.args = {

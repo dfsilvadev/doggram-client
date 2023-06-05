@@ -31,10 +31,10 @@ const wrapperModifiers = {
   `,
   minimal: (theme: DefaultTheme) => css`
     background: none;
-    color: ${theme.colors.purple500};
+    color: ${theme.colors.gray800};
 
     &:hover {
-      color: ${theme.colors.purple800};
+      color: ${theme.colors.gray800};
       background: none;
     }
   `,
