@@ -11,6 +11,7 @@ export const SignUpFormGroup = styled.div`
       a {
         color: ${theme.colors.purple400};
         font-weight: ${theme.font.weight.bold};
+        padding-left: 0.5rem;
       }
     }
   `}
