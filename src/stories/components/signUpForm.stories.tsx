@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Form, SignUpForm } from "@/components";
@@ -13,18 +14,20 @@ export default {
 } as ComponentMeta<typeof SignUpForm>;
 
 const Template: ComponentStory<typeof SignUpForm> = () => (
-  <div
-    style={{
-      padding: "1rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center"
-    }}
-  >
-    <Form title="Sign up">
-      <SignUpForm />
-    </Form>
-  </div>
+  <BrowserRouter>
+    <div
+      style={{
+        padding: "1rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <Form title="Sign up">
+        <SignUpForm />
+      </Form>
+    </div>
+  </BrowserRouter>
 );
 
 export const Default = Template.bind({});

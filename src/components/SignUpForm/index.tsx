@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { EnvelopeSimple, Lock, User } from "phosphor-react";
 
 import { Button, Input } from "@/components";
@@ -24,9 +25,7 @@ const SignUpForm = () => {
 
       <p>
         Já possui uma conta?
-        <Button as="a" href={endpoint.SIGNIN} minimal>
-          Faça seu login agora!
-        </Button>
+        <Link to={endpoint.SIGNIN}>Faça seu login agora!</Link>
       </p>
     </S.SignUpFormGroup>
   );
