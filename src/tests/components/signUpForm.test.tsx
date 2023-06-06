@@ -28,6 +28,14 @@ describe("SignUpForm", () => {
     expect(screen.getByPlaceholderText("Senha")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/confirmar senha/i)).toBeInTheDocument();
 
+    expect(
+      screen.getByRole("button", { name: "Cadastrar" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Cadastrar" })).toHaveAttribute(
+      "type",
+      "submit"
+    );
+
     expect(screen.getByText("Já possui uma conta?")).toBeInTheDocument();
 
     expect(screen.getByRole("link")).toHaveAttribute("href", endpoint.SIGNIN);
