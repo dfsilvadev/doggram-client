@@ -4,7 +4,7 @@ import { renderWithTheme } from "@/utils/tests";
 
 import { Navbar } from "@/components";
 
-import { endpoint } from "@/utils/common/constant/endpoints";
+import { ENDPOINT } from "@/utils/common/constant/endpoints";
 
 describe("Navbar", () => {
   it("render currectly", () => {
@@ -21,7 +21,7 @@ describe("Navbar", () => {
     });
 
     expect(
-      screen.getByRole("img", { name: /logotipo doggram/i })
+      screen.getByRole("img", { name: /logotipo petsgram/i })
     ).toBeInTheDocument();
   });
 
@@ -45,7 +45,7 @@ describe("Navbar", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /home link/i })).toHaveAttribute(
       "href",
-      endpoint.HOME
+      ENDPOINT.HOME
     );
   });
 });

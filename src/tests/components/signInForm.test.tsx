@@ -4,7 +4,7 @@ import { renderWithTheme } from "@/utils/tests";
 
 import { Form, SignInForm } from "@/components";
 
-import { endpoint } from "@/utils/common/constant/endpoints";
+import { ENDPOINT } from "@/utils/common/constant/endpoints";
 
 describe("SignInForm", () => {
   it("should render currectly", () => {
@@ -36,6 +36,6 @@ describe("SignInForm", () => {
 
     expect(screen.getByText("Não possui conta?")).toBeInTheDocument();
 
-    expect(screen.getByRole("link")).toHaveAttribute("href", endpoint.SIGNUP);
+    expect(screen.getByRole("link")).toHaveAttribute("href", ENDPOINT.SIGNUP);
   });
 });
