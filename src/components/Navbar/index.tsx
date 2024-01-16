@@ -3,7 +3,7 @@ import { MagnifyingGlass, PlusCircle } from "phosphor-react";
 
 import { Avatar, Button, Input } from "@/components";
 
-import { endpoint } from "@/utils/common/constant/endpoints";
+import { ENDPOINT } from "@/utils/common/constant/endpoints";
 
 import * as S from "./styles";
 
@@ -14,12 +14,12 @@ const Navbar = () => {
     <S.Header>
       <S.Content>
         <S.Logo>
-          <Link to={endpoint.HOME}>
+          <Link to={ENDPOINT.HOME}>
             <img
               src={logo}
-              alt="logotipo doggram: composto por um desenho vetor de um cachorro sorrindo e com uma mancha roxa com formato de triângulo em seu olho direito."
-              title="logotipo doggram: composto por um desenho vetor de um cachorro sorrindo e com uma mancha roxa com formato de triângulo em seu olho direito."
-              aria-label="logotipo doggram"
+              alt="logotipo petsgram: composto por um desenho vetor de um cachorro sorrindo e com uma mancha roxa com formato de triângulo em seu olho direito."
+              title="logotipo petsgram: composto por um desenho vetor de um cachorro sorrindo e com uma mancha roxa com formato de triângulo em seu olho direito."
+              aria-label="logotipo petsgram"
             />
           </Link>
         </S.Logo>
@@ -35,7 +35,7 @@ const Navbar = () => {
         />
 
         <S.Nav>
-          <NavLink to={endpoint.HOME}>
+          <NavLink to={ENDPOINT.HOME}>
             <MagnifyingGlass size={24} weight="bold" aria-label="home link" />
           </NavLink>
 

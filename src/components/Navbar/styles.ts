@@ -8,6 +8,7 @@ export const Header = styled.header`
     width: 100%;
     height: 5rem;
     background-color: ${theme.colors.white};
+    border-bottom: 1px solid #f2f3f5;
 
     display: flex;
     align-items: center;
