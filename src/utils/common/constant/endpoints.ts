@@ -1,4 +1,4 @@
-export const endpoint = {
+export const ENDPOINT = {
   HOME: "/",
   SIGNIN: "/sign-in",
   SIGNUP: "/sign-up",
@@ -6,4 +6,4 @@ export const endpoint = {
     HOME: "/profile",
     EDIT: "/profile/edit"
   }
-};
+} as const;
