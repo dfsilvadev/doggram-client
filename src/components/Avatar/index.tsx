@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { SignOut, User } from "phosphor-react";
 
-import { endpoint } from "@/utils/common/constant/endpoints";
+import { ENDPOINT } from "@/utils/common/constant/endpoints";
 
 import * as S from "./styles";
 
@@ -19,7 +19,7 @@ const Avatar: FC<AvatarProps> = ({ ...props }) => {
       <DropdownMenu.Portal>
         <S.DropdownMenuContent sideOffset={5} aria-label="profile menu">
           <S.DropdownMenuItem>
-            <Link to={endpoint.PROFILE.HOME}>
+            <Link to={ENDPOINT.PROFILE.HOME}>
               <User weight="bold" /> <span>Perfil</span>
             </Link>
           </S.DropdownMenuItem>

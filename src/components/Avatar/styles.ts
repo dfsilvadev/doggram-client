@@ -18,7 +18,7 @@ export const DropdownMenuContent = styled(DropdownMenu.Content)`
   ${({ theme }) => css`
     min-width: 13.75rem;
     background-color: ${theme.colors.white};
-    border: 2px solid ${theme.colors.gray50};
+    border: 1px solid ${theme.colors.gray100};
     border-radius: 0.5rem;
     padding: 0.3125rem;
     box-shadow: 0 0.625rem 2.375rem -0.625rem rgba(22, 23, 24, 0.35),
