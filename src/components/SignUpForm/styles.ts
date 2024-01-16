@@ -5,6 +5,11 @@ export const SignUpFormGroup = styled.div`
     display: grid;
     gap: 1rem;
 
+    p,
+    p > a {
+      font-size: ${theme.font.sizes.small};
+    }
+
     p {
       text-align: right;
 

@@ -3,7 +3,7 @@ import { EnvelopeSimple, Lock, User } from "phosphor-react";
 
 import { Button, Input } from "@/components";
 
-import { endpoint } from "@/utils/common/constant/endpoints";
+import { ENDPOINT } from "@/utils/common/constant/endpoints";
 
 import * as S from "./styles";
 
@@ -25,7 +25,7 @@ const SignUpForm = () => {
 
       <p>
         Já possui uma conta?
-        <Link to={endpoint.SIGNIN}>Faça seu login agora!</Link>
+        <Link to={ENDPOINT.SIGNIN}>Faça seu login agora!</Link>
       </p>
     </S.SignUpFormGroup>
   );
