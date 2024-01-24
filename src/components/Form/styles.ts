@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 export const FormWrapper = styled.form`
   ${({ theme }) => css`
     width: min(30rem, 100%);
+    background-color: ${theme.colors.white};
     border: 2px solid ${theme.colors.purple400};
     border-radius: 0.5rem;
     padding: 1.5rem;

@@ -2,6 +2,7 @@ export { default as Avatar } from "./Avatar";
 export { default as Button } from "./Button";
 export { default as Container } from "./Container";
 export { default as Form } from "./Form";
+export { FlexComponent as Flex } from "./Flex";
 export { default as Input } from "./Input";
 export { default as Navbar } from "./Navbar";
 export { default as SignInForm } from "./SignInForm";

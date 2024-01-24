@@ -2,25 +2,16 @@ import { BrowserRouter } from "react-router-dom";
 import { screen } from "@testing-library/react";
 import { renderWithTheme } from "@/utils/tests";
 
-import { Form, SignInForm } from "@/components";
+import { SignInForm } from "@/components";
 
-import { ENDPOINT } from "@/utils/common/constant/endpoints";
+import { ROUTES } from "@/utils/common/constant/routes";
 
 describe("SignInForm", () => {
   it("should render currectly", () => {
-    renderWithTheme(
-      <Form title="Sign in" aria-label="sign in form">
-        <SignInForm />
-      </Form>,
-      { wrapper: BrowserRouter }
-    );
+    renderWithTheme(<SignInForm />, { wrapper: BrowserRouter });
 
     expect(
       screen.getByRole("form", { name: /sign in form/i })
-    ).toBeInTheDocument();
-
-    expect(
-      screen.getByRole("heading", { name: /Sign in/i })
     ).toBeInTheDocument();
 
     expect(screen.getByLabelText(/form group/i)).toBeInTheDocument();
@@ -36,6 +27,6 @@ describe("SignInForm", () => {
 
     expect(screen.getByText("Não possui conta?")).toBeInTheDocument();
 
-    expect(screen.getByRole("link")).toHaveAttribute("href", ENDPOINT.SIGNUP);
+    expect(screen.getByRole("link")).toHaveAttribute("href", ROUTES.SIGNUP);
   });
 });
