@@ -3,7 +3,7 @@ import { MagnifyingGlass, PlusCircle } from "phosphor-react";
 
 import { Avatar, Button, Input } from "@/components";
 
-import { ENDPOINT } from "@/utils/common/constant/endpoints";
+import { ROUTES } from "@/utils/common/constant/routes";
 
 import * as S from "./styles";
 
@@ -14,7 +14,7 @@ const Navbar = () => {
     <S.Header>
       <S.Content>
         <S.Logo>
-          <Link to={ENDPOINT.HOME}>
+          <Link to={ROUTES.HOME}>
             <img
               src={logo}
               alt="logotipo petsgram: composto por um desenho vetor de um cachorro sorrindo e com uma mancha roxa com formato de triângulo em seu olho direito."
@@ -35,7 +35,7 @@ const Navbar = () => {
         />
 
         <S.Nav>
-          <NavLink to={ENDPOINT.HOME}>
+          <NavLink to={ROUTES.HOME}>
             <MagnifyingGlass size={24} weight="bold" aria-label="home link" />
           </NavLink>
 

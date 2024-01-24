@@ -4,11 +4,11 @@ import { renderWithTheme } from "@/utils/tests";
 
 import { DefaultRoutes } from "@/routes";
 
-import { endpoint } from "@/utils/common/constant/endpoints";
+import { ROUTES } from "@/utils/common/constant/routes";
 
 describe("DefaultRoutes", () => {
   it("renders Home route correctly", () => {
-    const rota = endpoint.HOME;
+    const rota = ROUTES.HOME;
     renderWithTheme(
       <MemoryRouter initialEntries={[rota]}>
         <DefaultRoutes />
@@ -19,29 +19,29 @@ describe("DefaultRoutes", () => {
   });
 
   it("renders Sign in route correctly", () => {
-    const rota = endpoint.SIGNIN;
+    const rota = ROUTES.SIGNIN;
     renderWithTheme(
       <MemoryRouter initialEntries={[rota]}>
         <DefaultRoutes />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Sign in")).toBeInTheDocument();
+    expect(screen.getByText("Faça seu cadastro agora!")).toBeInTheDocument();
   });
 
   it("renders Sign up route correctly", () => {
-    const rota = endpoint.SIGNUP;
+    const rota = ROUTES.SIGNUP;
     renderWithTheme(
       <MemoryRouter initialEntries={[rota]}>
         <DefaultRoutes />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Sign up")).toBeInTheDocument();
+    expect(screen.getByText("Faça seu login agora!")).toBeInTheDocument();
   });
 
   it("renders Profile route correctly", () => {
-    const rota = endpoint.PROFILE.HOME;
+    const rota = ROUTES.PROFILE.HOME;
     renderWithTheme(
       <MemoryRouter initialEntries={[rota]}>
         <DefaultRoutes />
@@ -52,7 +52,7 @@ describe("DefaultRoutes", () => {
   });
 
   it("renders Profile / Edit route correctly", () => {
-    const rota = endpoint.PROFILE.EDIT;
+    const rota = ROUTES.PROFILE.EDIT;
     renderWithTheme(
       <MemoryRouter initialEntries={[rota]}>
         <DefaultRoutes />

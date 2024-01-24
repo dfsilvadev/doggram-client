@@ -4,7 +4,7 @@ import { renderWithTheme } from "@/utils/tests";
 
 import { Navbar } from "@/components";
 
-import { ENDPOINT } from "@/utils/common/constant/endpoints";
+import { ROUTES } from "@/utils/common/constant/routes";
 
 describe("Navbar", () => {
   it("render currectly", () => {
@@ -45,7 +45,7 @@ describe("Navbar", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /home link/i })).toHaveAttribute(
       "href",
-      ENDPOINT.HOME
+      ROUTES.HOME
     );
   });
 });
