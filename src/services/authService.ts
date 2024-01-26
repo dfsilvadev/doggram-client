@@ -1,36 +1,37 @@
 import axiosService from "@/utils/common/services/axiosService";
+
 import { ENDPOINTS } from "@/utils/common/constant/endpoints";
 
-export type RegisterServiceData = {
-  name: string;
-  email: string;
-  password: string;
-  confirm_password: string;
-};
+import {
+  DataRegisterResponse,
+  DataToRegisterUser,
+  ErrorResponse
+} from "@/components/SignUpForm/types";
 
 const register = async ({
   name,
   email,
   password,
   confirm_password
-}: RegisterServiceData) => {
+}: DataToRegisterUser) => {
   try {
-    const { data } = await axiosService.post(ENDPOINTS.REGISTER, {
+    const response = await axiosService.post<
+      DataRegisterResponse | ErrorResponse
+    >(ENDPOINTS.REGISTER, {
       name,
       email,
       password,
       confirm_password
     });
 
-    if (data) {
-      sessionStorage.setItem("user", JSON.stringify(data));
-
-      return data;
+    if (response) {
+      sessionStorage.setItem("user", JSON.stringify(response));
     }
 
-    return null;
-  } catch (err) {
-    console.error(err);
+    return response;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    return err.response?.data?.errors || err.response?.data?.error;
   }
 };
 
