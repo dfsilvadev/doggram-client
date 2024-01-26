@@ -9,7 +9,7 @@ import * as S from "./styles";
 
 const SignInForm = () => {
   return (
-    <Form aria-label="sign in form" title="Sign in">
+    <Form aria-label="sign in form">
       <S.SignInFormGroup aria-label="form group">
         <Input name="email" placeholder="E-mail" icon={<EnvelopeSimple />} />
         <Input name="password" placeholder="Senha" icon={<Lock />} />
