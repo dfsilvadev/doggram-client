@@ -1,8 +1,10 @@
-import { FormEvent, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { EnvelopeSimple, Lock, User } from "phosphor-react";
-
 import { useDispatch } from "react-redux";
+import { EnvelopeSimple, Lock, User } from "phosphor-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button, Form, Input } from "@/components";
 
@@ -14,23 +16,49 @@ import { ROUTES } from "@/utils/common/constant/routes";
 
 import * as S from "./styles";
 
+const signUpFormSchema = z
+  .object({
+    name: z
+      .string()
+      .min(5, { message: "O nome de usuário precisa ter no mínumo 5 letras" }),
+    email: z.string().email("Este e-mail não é válido."),
+    password: z
+      .string()
+      .min(6, { message: "A senha deve conter um mínimo de 6 letras" }),
+    confirm_password: z
+      .string()
+      .min(6, { message: "A senha deve conter um mínimo de 6 letras" })
+  })
+  .superRefine(({ confirm_password, password }, ctx) => {
+    if (confirm_password !== password) {
+      ctx.addIssue({
+        code: "custom",
+        message: "As senhas não correspondem.",
+        path: ["confirm_password"]
+      });
+    }
+  });
+
+type RegisterFormData = z.infer<typeof signUpFormSchema>;
+
 const SignUpForm = () => {
+  const {
+    register: zRegister,
+    handleSubmit,
+    reset: zReset,
+    formState: { errors, isSubmitting }
+  } = useForm<RegisterFormData>({
+    resolver: zodResolver(signUpFormSchema)
+  });
+
   const dispatch = useDispatch();
+  const { error } = useAppSelector((state) => state.auth);
 
-  // const { loading, error } = useAppSelector((state) => state.auth);
-  useAppSelector((state) => state.auth);
+  const handelRegister = (data: RegisterFormData) => {
+    dispatch(register(data));
 
-  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
-    evt.preventDefault();
-
-    const user = {
-      name: "Fulado da Silva",
-      email: "fulaninho@email.com",
-      password: "#.su2024.#",
-      confirm_password: "#.su2024.#"
-    };
-
-    dispatch(register(user));
+    console.log(error);
+    zReset();
   };
 
   useEffect(() => {
@@ -38,18 +66,45 @@ const SignUpForm = () => {
   }, [dispatch]);
 
   return (
-    <Form onSubmit={handleSubmit} aria-label="sign up form" title="Sign un">
+    <Form onSubmit={handleSubmit(handelRegister)} aria-label="sign up form">
       <S.SignUpFormGroup aria-label="form group">
-        <Input name="name" placeholder="Nome completo" icon={<User />} />
-        <Input name="email" placeholder="E-mail" icon={<EnvelopeSimple />} />
-        <Input name="password" placeholder="Senha" icon={<Lock />} />
         <Input
-          name="confirm-password"
-          placeholder="Confirmar senha"
+          placeholder="Nome completo"
+          disabled={isSubmitting}
+          icon={<User />}
+          {...zRegister("name")}
+          error={errors.name && errors.name.message}
+        />
+        <Input
+          placeholder="E-mail"
+          disabled={isSubmitting}
+          icon={<EnvelopeSimple />}
+          {...zRegister("email")}
+          error={errors.email && errors.email.message}
+        />
+        <Input
+          type="password"
+          placeholder="Senha"
+          disabled={isSubmitting}
           icon={<Lock />}
+          {...zRegister("password")}
+          error={errors.password && errors.password.message}
+        />
+        <Input
+          type="password"
+          placeholder="Confirmar senha"
+          disabled={isSubmitting}
+          icon={<Lock />}
+          {...zRegister("confirm_password")}
+          error={errors.confirm_password && errors.confirm_password.message}
         />
 
-        <Button type="submit" fullWidth>
+        <Button
+          type="submit"
+          fullWidth
+          disabled={isSubmitting}
+          loading={isSubmitting}
+        >
           Cadastrar
         </Button>
 

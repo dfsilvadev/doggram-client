@@ -10,7 +10,7 @@ export const SignUpFormGroup = styled.div`
       font-size: ${theme.font.sizes.small};
     }
 
-    p {
+    & > p {
       text-align: right;
 
       a {
