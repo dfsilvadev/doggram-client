@@ -8,12 +8,7 @@ describe("Form", () => {
   it("should render currectly", () => {
     renderWithTheme(
       <Form aria-label="sign up form">
-        <Input
-          initialValue=""
-          label="E-mail"
-          name="email"
-          placeholder="john.doe@gmail.com"
-        />
+        <Input label="E-mail" name="email" placeholder="john.doe@gmail.com" />
 
         <Button type="submit">Submit</Button>
       </Form>
@@ -27,12 +22,7 @@ describe("Form", () => {
   it("render title when passed", () => {
     renderWithTheme(
       <Form aria-label="sign up form" title="Title Form">
-        <Input
-          initialValue=""
-          label="E-mail"
-          name="email"
-          placeholder="john.doe@gmail.com"
-        />
+        <Input label="E-mail" name="email" placeholder="john.doe@gmail.com" />
 
         <Button type="submit">Submit</Button>
       </Form>
@@ -50,12 +40,7 @@ describe("Form", () => {
 
     renderWithTheme(
       <Form aria-label="sign up form" onSubmit={handleSubmit}>
-        <Input
-          initialValue=""
-          label="E-mail"
-          name="email"
-          placeholder="john.doe@gmail.com"
-        />
+        <Input label="E-mail" name="email" placeholder="john.doe@gmail.com" />
 
         <Button type="submit">Submit</Button>
       </Form>
