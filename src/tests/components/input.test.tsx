@@ -25,9 +25,7 @@ describe("Input", () => {
   });
 
   it("should changes its value when typing", async () => {
-    const onInput = jest.fn();
-
-    renderWithTheme(<Input onInput={onInput} label="Label" name="Label" />);
+    renderWithTheme(<Input label="Label" name="Label" />);
 
     const input = screen.getByRole("textbox");
     const text = "This is my new text";
@@ -38,10 +36,7 @@ describe("Input", () => {
 
     await waitFor(() => {
       expect(input).toHaveValue(text);
-      expect(onInput).toHaveBeenCalledTimes(text.length);
     });
-
-    expect(onInput).toHaveBeenCalledWith(text);
   });
 
   it("should is accessible by tab", async () => {

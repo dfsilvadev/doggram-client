@@ -100,5 +100,6 @@ export const ErrorMsg = styled.p`
     color: ${theme.colors.red500};
     font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.weight.medium};
+    padding-top: 0.1rem;
   `}
 `;

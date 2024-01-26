@@ -1,29 +1,21 @@
-import { ChangeEvent, useState } from "react";
+import { ForwardRefRenderFunction, forwardRef } from "react";
 
 import * as S from "./styles";
 
 import { TextFieldProps } from "./types";
 
-const Input = ({
-  label,
-  initialValue = "",
-  icon,
-  name,
-  iconPosition = "left",
-  disabled = false,
-  onInput,
-  error,
-  ...props
-}: TextFieldProps) => {
-  const [value, setValue] = useState(initialValue);
-
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value;
-    setValue(newValue);
-
-    !!onInput && onInput(newValue);
-  };
-
+const Input: ForwardRefRenderFunction<HTMLInputElement, TextFieldProps> = (
+  {
+    label,
+    icon,
+    name,
+    iconPosition = "left",
+    disabled = false,
+    error,
+    ...props
+  },
+  ref
+) => {
   return (
     <S.Wrapper disabled={disabled} error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
@@ -31,12 +23,11 @@ const Input = ({
         {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
         <S.Input
           type="text"
-          onChange={onChange}
-          value={value}
           disabled={disabled}
           name={name}
           {...(label ? { id: name } : {})}
           {...props}
+          ref={ref}
         />
       </S.InputWrapper>
       {!!error && <S.ErrorMsg>{error}</S.ErrorMsg>}
@@ -44,4 +35,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default forwardRef(Input);
