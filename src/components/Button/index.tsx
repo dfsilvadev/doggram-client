@@ -11,6 +11,7 @@ const Button: ForwardRefRenderFunction<WrapperStyleProps, ButtonProps> = (
     fullWidth = false,
     ghost = false,
     minimal = false,
+    loading = false,
     icon,
     ...props
   },
@@ -26,8 +27,14 @@ const Button: ForwardRefRenderFunction<WrapperStyleProps, ButtonProps> = (
       ref={ref}
       {...props}
     >
-      {!!icon && icon}
-      {!!children && <span>{children}</span>}
+      {loading ? (
+        <S.Loader />
+      ) : (
+        <>
+          {!!icon && icon}
+          {!!children && <span>{children}</span>}
+        </>
+      )}
     </S.Wrapper>
   );
 };
