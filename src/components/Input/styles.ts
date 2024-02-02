@@ -8,6 +8,7 @@ const wrapperModifiers = {
   error: (theme: DefaultTheme) => css`
     ${InputWrapper} {
       border-color: ${theme.colors.red500};
+      color: ${theme.colors.purple400};
     }
     ${Icon},
     ${Label} {
