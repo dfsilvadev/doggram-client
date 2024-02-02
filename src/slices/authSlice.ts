@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { parseCookies } from "nookies";
 
 import authService from "@/services/authService";
 
@@ -8,8 +7,9 @@ import {
   DataToRegisterUser
 } from "@/components/SignUpForm/types";
 
-const cookies = parseCookies(undefined);
-const user = JSON.parse(cookies.user);
+const storage = sessionStorage.getItem("user");
+
+const user = JSON.parse(storage!);
 
 export type SliceInitialState = {
   user: DataRegisterResponse | null;

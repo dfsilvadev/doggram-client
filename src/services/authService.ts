@@ -1,5 +1,3 @@
-import { setCookie } from "nookies";
-
 import axiosService from "@/utils/common/services/axiosService";
 
 import { ENDPOINTS } from "@/utils/common/constant/endpoints";
@@ -27,10 +25,7 @@ const register = async ({
     });
 
     if (data) {
-      setCookie(null, "user", JSON.stringify(data), {
-        maxAge: 60 * 60 * 24, // 24 hours
-        path: "/"
-      });
+      sessionStorage.setItem("user", JSON.stringify(data));
     }
 
     return data;
