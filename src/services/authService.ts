@@ -15,7 +15,7 @@ const register = async ({
   confirm_password
 }: DataToRegisterUser) => {
   try {
-    const response = await axiosService.post<
+    const { data } = await axiosService.post<
       DataRegisterResponse | ErrorResponse
     >(ENDPOINTS.REGISTER, {
       name,
@@ -24,11 +24,11 @@ const register = async ({
       confirm_password
     });
 
-    if (response) {
-      sessionStorage.setItem("user", JSON.stringify(response));
+    if (data) {
+      sessionStorage.setItem("user", JSON.stringify(data));
     }
 
-    return response;
+    return data;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     return err.response?.data?.errors || err.response?.data?.error;

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import { EnvelopeSimple, Lock, User } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -52,17 +53,33 @@ const SignUpForm = () => {
   });
 
   const dispatch = useDispatch();
-  const { error } = useAppSelector((state) => state.auth);
+  const { error, success } = useAppSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const handelRegister = (data: RegisterFormData) => {
     dispatch(register(data));
-
-    console.log(error);
     zReset();
   };
 
   useEffect(() => {
+    if (success) {
+      toast.success("Usuário cadastrado com sucesso.");
+      navigate(ROUTES.SIGNIN);
+    }
+  }, [navigate, success]);
+
+  useEffect(() => {
+    if (error && typeof error === "string") {
+      toast.error(error);
+    }
+  }, [error]);
+
+  useEffect(() => {
     dispatch(reset());
+
+    return () => {
+      dispatch(reset());
+    };
   }, [dispatch]);
 
   return (
@@ -71,14 +88,14 @@ const SignUpForm = () => {
         <Input
           placeholder="Nome completo"
           disabled={isSubmitting}
-          icon={<User />}
+          icon={<User size={18} weight="bold" />}
           {...zRegister("name")}
           error={errors.name && errors.name.message}
         />
         <Input
           placeholder="E-mail"
           disabled={isSubmitting}
-          icon={<EnvelopeSimple />}
+          icon={<EnvelopeSimple size={18} weight="bold" />}
           {...zRegister("email")}
           error={errors.email && errors.email.message}
         />
@@ -86,7 +103,7 @@ const SignUpForm = () => {
           type="password"
           placeholder="Senha"
           disabled={isSubmitting}
-          icon={<Lock />}
+          icon={<Lock size={18} weight="bold" />}
           {...zRegister("password")}
           error={errors.password && errors.password.message}
         />
@@ -94,7 +111,7 @@ const SignUpForm = () => {
           type="password"
           placeholder="Confirmar senha"
           disabled={isSubmitting}
-          icon={<Lock />}
+          icon={<Lock size={18} weight="bold" />}
           {...zRegister("confirm_password")}
           error={errors.confirm_password && errors.confirm_password.message}
         />
