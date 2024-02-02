@@ -3,6 +3,7 @@
 exports[`Input should renders with error 1`] = `
 .c0 .c3 {
   border-color: #F16165;
+  color: #9164fa;
 }
 
 .c0 .c5,
