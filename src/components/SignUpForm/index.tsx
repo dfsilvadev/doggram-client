@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { EnvelopeSimple, Lock, User } from "phosphor-react";
@@ -54,7 +54,6 @@ const SignUpForm = () => {
 
   const dispatch = useDispatch();
   const { error, success } = useAppSelector((state) => state.auth);
-  const navigate = useNavigate();
 
   const handelRegister = (data: RegisterFormData) => {
     dispatch(register(data));
@@ -64,9 +63,8 @@ const SignUpForm = () => {
   useEffect(() => {
     if (success) {
       toast.success("Usuário cadastrado com sucesso.");
-      navigate(ROUTES.SIGNIN);
     }
-  }, [navigate, success]);
+  }, [success]);
 
   useEffect(() => {
     if (error && typeof error === "string") {
@@ -76,10 +74,6 @@ const SignUpForm = () => {
 
   useEffect(() => {
     dispatch(reset());
-
-    return () => {
-      dispatch(reset());
-    };
   }, [dispatch]);
 
   return (
