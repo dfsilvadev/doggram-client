@@ -15,6 +15,7 @@ export type ButtonProps = {
   minimal?: boolean;
   ghost?: boolean;
   icon?: ReactNode;
+  loading?: boolean;
   as?: ElementType;
 } & ButtonTypes;
 

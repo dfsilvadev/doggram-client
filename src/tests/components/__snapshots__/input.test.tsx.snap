@@ -3,6 +3,7 @@
 exports[`Input should renders with error 1`] = `
 .c0 .c3 {
   border-color: #F16165;
+  color: #9164fa;
 }
 
 .c0 .c5,
@@ -80,6 +81,7 @@ exports[`Input should renders with error 1`] = `
   color: #F16165;
   font-size: 0.75rem;
   font-weight: 500;
+  padding-top: 0.1rem;
 }
 
 <div
@@ -133,7 +135,6 @@ exports[`Input should renders with error 1`] = `
       id="Input"
       name="Input"
       type="text"
-      value=""
     />
   </div>
   <p

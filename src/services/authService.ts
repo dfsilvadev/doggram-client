@@ -1,21 +1,23 @@
 import axiosService from "@/utils/common/services/axiosService";
+
 import { ENDPOINTS } from "@/utils/common/constant/endpoints";
 
-export type RegisterServiceData = {
-  name: string;
-  email: string;
-  password: string;
-  confirm_password: string;
-};
+import {
+  DataRegisterResponse,
+  DataToRegisterUser,
+  ErrorResponse
+} from "@/components/SignUpForm/types";
 
 const register = async ({
   name,
   email,
   password,
   confirm_password
-}: RegisterServiceData) => {
+}: DataToRegisterUser) => {
   try {
-    const { data } = await axiosService.post(ENDPOINTS.REGISTER, {
+    const { data } = await axiosService.post<
+      DataRegisterResponse | ErrorResponse
+    >(ENDPOINTS.REGISTER, {
       name,
       email,
       password,
@@ -24,13 +26,12 @@ const register = async ({
 
     if (data) {
       sessionStorage.setItem("user", JSON.stringify(data));
-
-      return data;
     }
 
-    return null;
-  } catch (err) {
-    console.error(err);
+    return data;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    return err.response?.data?.errors || err.response?.data?.error;
   }
 };
 

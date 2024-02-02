@@ -1,14 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import authService, { RegisterServiceData } from "@/services/authService";
+import authService from "@/services/authService";
+
+import { DataToRegisterUser } from "@/components/SignUpForm/types";
 
 const storage = sessionStorage.getItem("user");
 
 const user = JSON.parse(storage!);
 
 export type SliceInitialState = {
-  user: RegisterServiceData | null;
-  error: boolean | string[] | null;
+  user: DataToRegisterUser | null;
+  error: boolean | string | null;
   success: boolean;
   loading: boolean;
 };
@@ -23,14 +25,23 @@ const initialState: SliceInitialState = {
 // Register an user and sign in
 export const register = createAsyncThunk(
   "auth/register",
-  async (user: RegisterServiceData, thunkAPI) => {
-    const data = await authService.register(user);
+  async (user: DataToRegisterUser, thunkAPI) => {
+    try {
+      const data = await authService.register(user);
 
-    if (data.errors as string[]) {
-      return thunkAPI.rejectWithValue(data.errors[0]);
+      if (typeof data === "string") {
+        return thunkAPI.rejectWithValue(data);
+      }
+
+      return data;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+      if (error.response && error.response.data.message) {
+        return thunkAPI.rejectWithValue(error.response.data.message);
+      } else {
+        return thunkAPI.rejectWithValue(error.message);
+      }
     }
-
-    return data;
   }
 );
 
@@ -46,7 +57,8 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
+      .addCase(register.pending, (state, action) => {
+        console.log("pending", action);
         state.loading = true;
         state.error = false;
       })
@@ -58,8 +70,9 @@ export const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(register.rejected, (state, action) => {
+        console.log("rejected", action);
         state.loading = false;
-        state.error = action.payload as string[];
+        state.error = action.payload as string;
         state.user = null;
       });
   }

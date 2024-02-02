@@ -8,6 +8,7 @@ const wrapperModifiers = {
   error: (theme: DefaultTheme) => css`
     ${InputWrapper} {
       border-color: ${theme.colors.red500};
+      color: ${theme.colors.purple400};
     }
     ${Icon},
     ${Label} {
@@ -100,5 +101,6 @@ export const ErrorMsg = styled.p`
     color: ${theme.colors.red500};
     font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.weight.medium};
+    padding-top: 0.1rem;
   `}
 `;
