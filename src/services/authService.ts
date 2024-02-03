@@ -35,8 +35,13 @@ const register = async ({
   }
 };
 
+const logout = () => {
+  sessionStorage.removeItem("user");
+};
+
 const authService = {
-  register
+  register,
+  logout
 };
 
 export default authService;
