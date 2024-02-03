@@ -34,11 +34,7 @@ export const Logo = styled.span`
   }
 `;
 
-export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 1em;
-`;
+export const Nav = styled.nav``;
 
 export const NewPostButton = styled(Button)`
   color: inherit;
