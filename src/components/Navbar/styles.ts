@@ -22,8 +22,8 @@ export const Content = styled(Container)`
 `;
 
 export const Logo = styled.span`
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 3rem;
+  height: 3rem;
 
   display: flex;
   align-items: center;
