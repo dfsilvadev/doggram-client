@@ -42,12 +42,21 @@ export const DropdownMenuItem = styled(DropdownMenu.Item)`
     font-weight: ${theme.font.weight.bold};
 
     &,
-    a {
+    a,
+    button {
       font-size: 0.8125rem;
       line-height: 1;
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+
+    & > button {
+      background: none;
+      border: none;
+      outline: none;
+      color: inherit;
+      font-weight: inherit;
     }
 
     &[data-disabled] {
