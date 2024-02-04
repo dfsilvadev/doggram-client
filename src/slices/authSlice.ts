@@ -48,6 +48,10 @@ export const register = createAsyncThunk(
   }
 );
 
+export const logout = createAsyncThunk("auth/logout", async () => {
+  await authService.logout();
+});
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -60,22 +64,25 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state, action) => {
-        console.log("pending", action);
+      .addCase(register.pending, (state) => {
         state.loading = true;
         state.error = false;
       })
       .addCase(register.fulfilled, (state, action) => {
-        console.log("fulfilled", action);
         state.loading = false;
         state.success = true;
         state.error = null;
         state.user = action.payload;
       })
       .addCase(register.rejected, (state, action) => {
-        console.log("rejected", action);
         state.loading = false;
         state.error = action.payload as string;
+        state.user = null;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
         state.user = null;
       });
   }

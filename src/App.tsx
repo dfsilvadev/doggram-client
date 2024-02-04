@@ -17,7 +17,12 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={DefaultTheme}>
           <GlobalStyles />
-          <ToastContainer autoClose={2500} theme="colored" icon={false} />
+          <ToastContainer
+            autoClose={2500}
+            theme="colored"
+            icon={false}
+            position="bottom-right"
+          />
           <DefaultRoutes />
         </ThemeProvider>
       </BrowserRouter>

@@ -4,10 +4,6 @@
 Remova esse comentário e descreva aqui qual o objetivo desse PR.
 -->
 
-### 🔗 Referências
-
-[FIGMA](https://www.figma.com/community/file/1138814493269096792)
-
 ### 📗 Prints
 
 ### 📗 Checklist do desenvolvedor

@@ -5,7 +5,6 @@ on:
   pull_request:
     branches:
       - main
-    types: [opened, synchronize, reopened]
 
 jobs:
   ci:
@@ -34,7 +33,14 @@ jobs:
           fetch-depth: 0
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@master 
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage
+
         env:
           GITHUB_TOKEN: ${{ secrets.SONARGITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}

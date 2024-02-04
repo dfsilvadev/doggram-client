@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useAppSelector } from "./useAppSelector";
+import useAppSelector from "./useAppSelector";
 
 import { DataRegisterResponse } from "@/components/SignUpForm/types";
 

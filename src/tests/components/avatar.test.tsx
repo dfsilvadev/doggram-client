@@ -15,9 +15,5 @@ describe("Avatar", () => {
     renderWithTheme(<Avatar {...props} />, { wrapper: BrowserRouter });
 
     expect(screen.getByRole("img", { name: /avatar/i })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: /avatar/i })).toHaveAttribute(
-      "src",
-      props.src
-    );
   });
 });

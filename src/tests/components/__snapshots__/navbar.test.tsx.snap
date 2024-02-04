@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar render currectly 1`] = `
-.c11 {
-  box-sizing: initial;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  border: 2px solid #f7f8fa;
-  outline: 2px solid #494d4b;
-}
-
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -57,6 +47,31 @@ exports[`Navbar render currectly 1`] = `
   max-width: 70rem;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .c5 {
@@ -149,8 +164,8 @@ exports[`Navbar render currectly 1`] = `
 }
 
 .c3 {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 3rem;
+  height: 3rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -166,18 +181,6 @@ exports[`Navbar render currectly 1`] = `
   -webkit-block-size: cover;
   -ms-flex-block-size: cover;
   block-size: cover;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
 }
 
 <div>
@@ -256,55 +259,103 @@ exports[`Navbar render currectly 1`] = `
         </div>
       </div>
       <nav
-        class="c9"
+        class=""
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <div
+          class="c9"
+          content="stretch"
+          direction="row"
+          display="flex"
+          gap="2rem"
+          justify="flex-start"
+          wrap="wrap"
         >
-          <svg
-            aria-label="home link"
-            fill="currentColor"
-            height="24"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
           >
-            <rect
-              fill="none"
-              height="256"
-              width="256"
-            />
-            <circle
-              cx="116"
-              cy="116"
-              fill="none"
-              r="84"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
-            />
-            <line
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
-              x1="175.4"
-              x2="224"
-              y1="175.4"
-              y2="224"
-            />
-          </svg>
-        </a>
-        <button
-          class="c10"
-        >
+            <svg
+              aria-label="home link"
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="none"
+                height="256"
+                width="256"
+              />
+              <path
+                d="M152,208V160a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v48a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V115.5a8.3,8.3,0,0,1,2.6-5.9l80-72.7a8,8,0,0,1,10.8,0l80,72.7a8.3,8.3,0,0,1,2.6,5.9V208a8,8,0,0,1-8,8H160A8,8,0,0,1,152,208Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="24"
+              />
+            </svg>
+          </a>
+          <button
+            class="c10"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="none"
+                height="256"
+                width="256"
+              />
+              <circle
+                cx="128"
+                cy="128"
+                fill="none"
+                r="96"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="24"
+              />
+              <line
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="24"
+                x1="88"
+                x2="168"
+                y1="128"
+                y2="128"
+              />
+              <line
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="24"
+                x1="128"
+                x2="128"
+                y1="88"
+                y2="168"
+              />
+            </svg>
+          </button>
           <svg
+            aria-expanded="false"
+            aria-haspopup="menu"
+            data-state="closed"
             fill="currentColor"
             height="24"
+            id="radix-:r0:"
+            style="cursor: pointer;"
+            type="button"
             viewBox="0 0 256 256"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -316,48 +367,24 @@ exports[`Navbar render currectly 1`] = `
             />
             <circle
               cx="128"
-              cy="128"
+              cy="96"
               fill="none"
-              r="96"
+              r="64"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="24"
             />
-            <line
+            <path
+              d="M31,216a112,112,0,0,1,194,0"
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="24"
-              x1="88"
-              x2="168"
-              y1="128"
-              y2="128"
-            />
-            <line
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
-              x1="128"
-              x2="128"
-              y1="88"
-              y2="168"
             />
           </svg>
-        </button>
-        <img
-          aria-expanded="false"
-          aria-haspopup="menu"
-          aria-label="avatar"
-          class="c11"
-          data-state="closed"
-          id="radix-:r0:"
-          src="https://avatars.githubusercontent.com/u/16245261?v=4"
-          type="button"
-        />
+        </div>
       </nav>
     </div>
   </header>

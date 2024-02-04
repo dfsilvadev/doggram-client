@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-import { MagnifyingGlass, PlusCircle } from "phosphor-react";
+import { House, MagnifyingGlass, PlusCircle } from "phosphor-react";
 
-import { Avatar, Button, Input } from "@/components";
+import { Avatar, Button, Flex, Input } from "@/components";
 
 import { ROUTES } from "@/utils/common/constant/routes";
 
@@ -35,17 +35,19 @@ const Navbar = () => {
         />
 
         <S.Nav>
-          <NavLink to={ROUTES.HOME}>
-            <MagnifyingGlass size={24} weight="bold" aria-label="home link" />
-          </NavLink>
+          <Flex gap="2rem" align="center">
+            <NavLink to={ROUTES.HOME}>
+              <House size={24} weight="bold" aria-label="home link" />
+            </NavLink>
 
-          <Button
-            icon={<PlusCircle size={24} weight="bold" />}
-            minimal
-            size="medium"
-          />
+            <Button
+              icon={<PlusCircle size={24} weight="bold" />}
+              minimal
+              size="medium"
+            />
 
-          <Avatar src="https://avatars.githubusercontent.com/u/16245261?v=4" />
+            <Avatar />
+          </Flex>
         </S.Nav>
       </S.Content>
     </S.Header>

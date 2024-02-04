@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button, Form, Input } from "@/components";
 
-import { useAppSelector } from "@/hooks/useAppSelector";
+import { useAppSelector } from "@/hooks";
 
 import { register, reset } from "@/slices/authSlice";
 
