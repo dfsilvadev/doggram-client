@@ -18,7 +18,7 @@ function App() {
         <ThemeProvider theme={DefaultTheme}>
           <GlobalStyles />
           <ToastContainer
-            autoClose={2500}
+            autoClose={3000}
             theme="colored"
             icon={false}
             position="bottom-right"
