@@ -8,6 +8,8 @@ import {
   ErrorResponse
 } from "@/components/SignUpForm/types";
 
+import { LoginFormData } from "@/components/SignInForm";
+
 const register = async ({
   name,
   email,
@@ -35,13 +37,33 @@ const register = async ({
   }
 };
 
+const login = async ({ email, password }: LoginFormData) => {
+  try {
+    const { data } = await axiosService.post<
+      DataRegisterResponse | ErrorResponse
+    >(ENDPOINTS.LOGIN, {
+      email,
+      password
+    });
+
+    if (data) {
+      sessionStorage.setItem("user", JSON.stringify(data));
+    }
+
+    return data;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    return err.response?.data?.errors || err.response?.data?.error;
+  }
+};
 const logout = () => {
   sessionStorage.removeItem("user");
 };
 
 const authService = {
   register,
-  logout
+  logout,
+  login
 };
 
 export default authService;
