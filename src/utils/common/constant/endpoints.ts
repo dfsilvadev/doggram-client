@@ -1,3 +1,4 @@
 export const ENDPOINTS = {
-  REGISTER: "/users/register"
+  REGISTER: "/users/register",
+  LOGIN: "/users/login"
 } as const;
