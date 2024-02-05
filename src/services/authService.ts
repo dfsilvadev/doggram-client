@@ -4,18 +4,18 @@ import { ENDPOINTS } from "@/utils/common/constant/endpoints";
 
 import {
   DataRegisterResponse,
-  DataToRegisterUser,
   ErrorResponse
 } from "@/components/SignUpForm/types";
 
 import { LoginFormData } from "@/components/SignInForm";
+import { RegisterFormData } from "@/components/SignUpForm";
 
 const register = async ({
   name,
   email,
   password,
   confirm_password
-}: DataToRegisterUser) => {
+}: RegisterFormData) => {
   try {
     const { data } = await axiosService.post<
       DataRegisterResponse | ErrorResponse

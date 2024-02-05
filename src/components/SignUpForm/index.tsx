@@ -40,7 +40,7 @@ const signUpFormSchema = z
     }
   });
 
-type RegisterFormData = z.infer<typeof signUpFormSchema>;
+export type RegisterFormData = z.infer<typeof signUpFormSchema>;
 
 const SignUpForm = () => {
   const {

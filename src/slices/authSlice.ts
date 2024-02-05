@@ -2,11 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import authService from "@/services/authService";
 
-import {
-  DataRegisterResponse,
-  DataToRegisterUser
-} from "@/components/SignUpForm/types";
+import { DataRegisterResponse } from "@/components/SignUpForm/types";
 import { LoginFormData } from "@/components/SignInForm";
+import { RegisterFormData } from "@/components/SignUpForm";
 
 const storage = sessionStorage.getItem("user");
 
@@ -29,7 +27,7 @@ const initialState: SliceInitialState = {
 // Register an user and sign in
 export const register = createAsyncThunk(
   "auth/register",
-  async (user: DataToRegisterUser, thunkAPI) => {
+  async (user: RegisterFormData, thunkAPI) => {
     try {
       const data = await authService.register(user);
 
