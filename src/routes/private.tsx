@@ -1,18 +1,25 @@
+import { ReactElement } from "react";
+import { Navigate } from "react-router-dom";
+
 import useAuth from "@/hooks/useAuth";
-import { Navigate, Outlet } from "react-router-dom";
+
+import storage from "@/utils/common/storage";
 
 type PrivateRouteProps = {
-  authorization: boolean;
   redirectTo: string;
+  children: ReactElement;
 };
 
-const PrivateRoute = ({ authorization, redirectTo }: PrivateRouteProps) => {
+const PrivateRoute = ({ redirectTo, children }: PrivateRouteProps) => {
   const { loading } = useAuth();
+  const { "petsgram.userToken": token } = storage.get() as {
+    "petsgram.userToken": string;
+  };
 
   if (loading) {
     return <p>carregando</p>;
   }
-  return authorization ? <Outlet /> : <Navigate to={redirectTo} />;
+  return token ? children : <Navigate to={redirectTo} />;
 };
 
 export default PrivateRoute;
