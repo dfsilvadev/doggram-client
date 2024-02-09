@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { EnvelopeSimple, Lock, User } from "phosphor-react";
@@ -52,6 +52,8 @@ const SignUpForm = () => {
     resolver: zodResolver(signUpFormSchema)
   });
 
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { error, success } = useAppSelector((state) => state.auth);
 
@@ -62,8 +64,10 @@ const SignUpForm = () => {
 
   useEffect(() => {
     if (success) {
+      navigate(ROUTES.SIGNIN);
       toast.success("Usuário cadastrado com sucesso.");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [success]);
 
   useEffect(() => {
