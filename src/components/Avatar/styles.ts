@@ -2,15 +2,26 @@ import styled, { css } from "styled-components";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 export const Image = styled.img`
+  box-sizing: initial;
+  width: 100%;
+  object-fit: contain;
+`;
+
+export const Picture = styled.picture`
   ${({ theme }) => css`
-    box-sizing: initial;
+    background: ${theme.colors.purple400};
     width: 2rem;
     height: 2rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    overflow: hidden;
 
-    border: 2px solid ${theme.colors.gray50};
+    border: 1px solid ${theme.colors.gray50};
     outline: 2px solid ${theme.colors.gray800};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   `}
 `;
 

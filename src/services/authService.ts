@@ -9,6 +9,7 @@ import {
 
 import { LoginFormData } from "@/components/SignInForm";
 import { RegisterFormData } from "@/components/SignUpForm";
+import storage from "@/utils/common/storage";
 
 const register = async ({
   name,
@@ -26,8 +27,9 @@ const register = async ({
       confirm_password
     });
 
-    if (data) {
+    if (data && "token" in data) {
       sessionStorage.setItem("user", JSON.stringify(data));
+      storage.set("petsgram:userToken", JSON.stringify(data.token));
     }
 
     return data;
@@ -46,8 +48,9 @@ const login = async ({ email, password }: LoginFormData) => {
       password
     });
 
-    if (data) {
+    if (data && "token" in data) {
       sessionStorage.setItem("user", JSON.stringify(data));
+      storage.set("petsgram.userToken", JSON.stringify(data.token));
     }
 
     return data;
@@ -58,6 +61,7 @@ const login = async ({ email, password }: LoginFormData) => {
 };
 const logout = () => {
   sessionStorage.removeItem("user");
+  storage.remove("petsgram.userToken");
 };
 
 const authService = {

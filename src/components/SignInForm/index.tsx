@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { EnvelopeSimple, Lock } from "phosphor-react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -36,13 +36,22 @@ const SignInForm = () => {
     resolver: zodResolver(signInFormSchema)
   });
 
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
-  const { error } = useAppSelector((state) => state.auth);
+  const { error, success } = useAppSelector((state) => state.auth);
 
   const handelLogin = (data: LoginFormData) => {
     dispatch(login(data));
     zReset();
   };
+
+  useEffect(() => {
+    if (success) {
+      navigate(ROUTES.HOME);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [success]);
 
   useEffect(() => {
     if (error && typeof error === "string") {

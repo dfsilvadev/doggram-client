@@ -27,15 +27,11 @@ const Avatar: FC<AvatarProps> = ({ src, ...props }) => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         {src ? (
-          <S.Image {...props} aria-label="avatar" />
+          <S.Picture>
+            <S.Image {...props} aria-label="avatar" src={src} />
+          </S.Picture>
         ) : (
-          <User
-            size={24}
-            weight="bold"
-            style={{
-              cursor: "pointer"
-            }}
-          />
+          <S.Picture></S.Picture>
         )}
       </DropdownMenu.Trigger>
 
