@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar render currectly 1`] = `
+.c11 {
+  background: #9164fa;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #f7f8fa;
+  outline: 2px solid #494d4b;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -347,43 +370,14 @@ exports[`Navbar render currectly 1`] = `
               />
             </svg>
           </button>
-          <svg
+          <picture
             aria-expanded="false"
             aria-haspopup="menu"
+            class="c11"
             data-state="closed"
-            fill="currentColor"
-            height="24"
             id="radix-:r0:"
-            style="cursor: pointer;"
             type="button"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              fill="none"
-              height="256"
-              width="256"
-            />
-            <circle
-              cx="128"
-              cy="96"
-              fill="none"
-              r="64"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
-            />
-            <path
-              d="M31,216a112,112,0,0,1,194,0"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
-            />
-          </svg>
+          />
         </div>
       </nav>
     </div>
