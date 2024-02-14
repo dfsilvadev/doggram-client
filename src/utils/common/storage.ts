@@ -15,7 +15,7 @@ const storage = {} as IStorageMethods;
 try {
   storage.set = (key, refreshToken) => {
     setCookie(undefined, key, refreshToken, {
-      maxAge: 60 * 60, // 1 hour
+      maxAge: 60 * 60 * 24, // 24 hour
       path: "/"
     });
   };
