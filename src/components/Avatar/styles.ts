@@ -55,8 +55,9 @@ export const DropdownMenuItem = styled(DropdownMenu.Item)`
     &,
     a,
     button {
+      width: 100%;
       font-size: 0.8125rem;
-      line-height: 1;
+      line-height: 1.5;
       display: flex;
       align-items: center;
       gap: 1rem;
