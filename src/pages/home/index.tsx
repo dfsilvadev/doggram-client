@@ -1,11 +1,10 @@
-import { Navbar } from "@/components";
+import { BaseTemplate } from "@/templates";
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <BaseTemplate>
       <h2>Home</h2>
-    </div>
+    </BaseTemplate>
   );
 };
 
