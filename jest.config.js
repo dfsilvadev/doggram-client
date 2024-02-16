@@ -2,12 +2,12 @@
 module.exports = {
   testEnvironment: "jest-environment-jsdom",
   moduleDirectories: ["node_modules", "src"],
-  testPathIgnorePatterns: ["/node_modules/"],
+  testPathIgnorePatterns: ["/node_modules/", "\\.jpg$"],
   collectCoverage: true,
   setupFilesAfterEnv: ["<rootDir>/.jest/setup.ts"],
   modulePaths: ["<rootDir>/src", "<rootDir>/.jest"],
   moduleNameMapper: {
-    "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/.jest/mocks/fileMock.ts",
+    "\\.(gif|ttf|eot|svg|png|jpg)$": "<rootDir>/.jest/mocks/fileMock.ts",
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
     "^@/(.*)$": "<rootDir>/src/$1",
     "^@assets/(.*)$": "<rootDir>/src/assets/$1",

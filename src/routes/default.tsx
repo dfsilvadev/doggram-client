@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { HomePage, SignInPage, SignUpPage } from "@/pages";
+import { HomePage, ProfilePage, SignInPage, SignUpPage } from "@/pages";
 
 import { ROUTES } from "@/utils/common/constant/routes";
 import PrivateRoute from "./private";
@@ -24,7 +24,7 @@ const DefaultRoutes = () => {
           index
           element={
             <PrivateRoute redirectTo={ROUTES.SIGNIN}>
-              <p>Profile</p>
+              <ProfilePage />
             </PrivateRoute>
           }
         />
